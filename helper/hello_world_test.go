@@ -65,42 +65,49 @@ func BenchmarkHelloWorldAdam(b *testing.B) {
 	}
 }
 
+// TestTableHelloWorld adalah fungsi untuk menguji fungsi HelloWorld menggunakan table test
+// Table test memungkinkan kita menguji beberapa test case sekaligus dalam satu fungsi
 func TestTableHelloWorld(t *testing.T) {
+	// Mendefinisikan slice struct yang berisi test case
 	tests := []struct {
-		name     string
-		request  string
-		expected string
+		name     string  // Nama test case
+		request  string  // Parameter input yang akan diuji
+		expected string  // Hasil yang diharapkan
 	}{
 		{
 			name:     "Aidil",
-			request:  "Aidil",
-			expected: "Hello Aidil",
+			request:  "Aidil", 
+			expected: "Hello Aidil", // Mengharapkan output "Hello Aidil"
 		},
 		{
 			name:     "Adam",
 			request:  "Adam",
-			expected: "Hello Adam",
+			expected: "Hello Adam", // Mengharapkan output "Hello Adam" 
 		},
 		{
 			name:     "Baik",
 			request:  "Baik",
-			expected: "Hello Baik",
+			expected: "Hello Baik", // Mengharapkan output "Hello Baik"
 		},
 		{
-			name:     "Budi",
+			name:     "Budi", 
 			request:  "Budi",
-			expected: "Hello Budi",
+			expected: "Hello Budi", // Mengharapkan output "Hello Budi"
 		},
 		{
 			name:     "Joko",
-			request:  "Joko",
-			expected: "Hello Joko",
+			request:  "Joko", 
+			expected: "Hello Joko", // Mengharapkan output "Hello Joko"
 		},
 	}
 
+	// Iterasi untuk setiap test case
 	for _, test := range tests {
+		// Menjalankan sub-test untuk setiap test case
 		t.Run(test.name, func(t *testing.T) {
+			// Memanggil fungsi HelloWorld dengan parameter dari test case
 			result := HelloWorld(test.request)
+			// Memastikan hasil sesuai dengan yang diharapkan menggunakan require.Equal
 			require.Equal(t, test.expected, result)
 		})
 	}
