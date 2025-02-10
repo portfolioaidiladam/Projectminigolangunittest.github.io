@@ -8,62 +8,62 @@ import (
 	"testing"
 )
 
-func BenchmarkTable(b *testing.B) {
-	benchmarks := []struct {
-		name    string
-		request string
-	}{
-		{
-			name:    "Aidil",
-			request: "Aidil",
-		},
-		{
-			name:    "Adam",
-			request: "Adam",
-		},
-		{
-			name:    "AidilAdamBaik",
-			request: "Aidil Adam Baik",
-		},
-		{
-			name:    "Budi",
-			request: "Budi Nugraha",
-		},
-	}
+// func BenchmarkTable(b *testing.B) {
+// 	benchmarks := []struct {
+// 		name    string
+// 		request string
+// 	}{
+// 		{
+// 			name:    "Aidil",
+// 			request: "Aidil",
+// 		},
+// 		{
+// 			name:    "Adam",
+// 			request: "Adam",
+// 		},
+// 		{
+// 			name:    "AidilAdamBaik",
+// 			request: "Aidil Adam Baik",
+// 		},
+// 		{
+// 			name:    "Budi",
+// 			request: "Budi Nugraha",
+// 		},
+// 	}
 
-	for _, benchmark := range benchmarks {
-		b.Run(benchmark.name, func(b *testing.B) {
-			for i := 0; i < b.N; i++ {
-				HelloWorld(benchmark.request)
-			}
-		})
-	}
-}
+// 	for _, benchmark := range benchmarks {
+// 		b.Run(benchmark.name, func(b *testing.B) {
+// 			for i := 0; i < b.N; i++ {
+// 				HelloWorld(benchmark.request)
+// 			}
+// 		})
+// 	}
+// }
 
-func BenchmarkSub(b *testing.B) {
-	b.Run("Aidil", func(b *testing.B) {
-		for i := 0; i < b.N; i++ {
-			HelloWorld("Aidil")
-		}
-	})
-	b.Run("Adam", func(b *testing.B) {
-		for i := 0; i < b.N; i++ {
-			HelloWorld("Adam")
-		}
-	})
-}
+// func BenchmarkSub(b *testing.B) {
+// 	b.Run("Aidil", func(b *testing.B) {
+// 		for i := 0; i < b.N; i++ {
+// 			HelloWorld("Aidil")
+// 		}
+// 	})
+// 	b.Run("Adam", func(b *testing.B) {
+// 		for i := 0; i < b.N; i++ {
+// 			HelloWorld("Adam")
+// 		}
+// 	})
+// }
 
-func BenchmarkHelloWorld(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		HelloWorld("Aidil")
-	}
-}
+// func BenchmarkHelloWorld(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		HelloWorld("Aidil")
+// 	}
+// }
 
-func BenchmarkHelloWorldAdam(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		HelloWorld("Adam")
-	}
-}
+// func BenchmarkHelloWorldAdam(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		HelloWorld("Adam")
+// 	}
+// }
 
 // TestTableHelloWorld adalah fungsi untuk menguji fungsi HelloWorld menggunakan table test
 // Table test memungkinkan kita menguji beberapa test case sekaligus dalam satu fungsi
